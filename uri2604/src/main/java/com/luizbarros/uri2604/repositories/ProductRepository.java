@@ -12,6 +12,6 @@ public interface ProductRepository extends JpaRepository<Product, Long>{
 	
 	@Query(nativeQuery = true, value = "SELECT id, name "
 			+ "FROM products "
-			+ "WHERE price < :low OR price > :high;")
-	List<ProductMinProjection> search(Integer low, Integer high);	
+			+ "WHERE price < :low OR price > :high")
+	List<ProductMinProjection> search(Integer low, Integer high);
 }
