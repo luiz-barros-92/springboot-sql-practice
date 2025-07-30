@@ -3,6 +3,7 @@ package com.luizbarros.uri2604;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +15,7 @@ import com.luizbarros.uri2604.repositories.ProductRepository;
 @SpringBootApplication
 public class Uri2604Application implements CommandLineRunner{
 	
+	@Autowired
 	private ProductRepository repository;
 
 	public static void main(String[] args) {
