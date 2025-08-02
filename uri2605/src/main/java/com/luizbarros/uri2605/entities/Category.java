@@ -1,7 +1,11 @@
 package com.luizbarros.uri2605.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -11,6 +15,9 @@ public class Category {
 	@Id
 	private Long id;
 	private String name;
+	
+	@OneToMany(mappedBy = "category")
+	private List<Product> products = new ArrayList<Product>();
 	
 	public Category() {
 	}
@@ -34,6 +41,11 @@ public class Category {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+
+	public List<Product> getProducts() {
+		return products;
 	}
 
 	@Override

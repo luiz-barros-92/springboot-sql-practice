@@ -1,9 +1,13 @@
 package com.luizbarros.uri2605.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,6 +21,9 @@ public class Provider {
 	private String street;
 	private String city;
 	private String state;
+	
+	@OneToMany(mappedBy = "provider")
+	private List<Product> products = new ArrayList<Product>();
 	
 	public Provider() {
 	}
@@ -67,6 +74,11 @@ public class Provider {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+	
+
+	public List<Product> getProducts() {
+		return products;
 	}
 
 	@Override
