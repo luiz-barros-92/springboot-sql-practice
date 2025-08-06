@@ -1,5 +1,6 @@
 package com.luizbarros.uri2613.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -11,6 +12,8 @@ public class Price {
 	@Id
 	private Long id;
 	private String categorie;
+	
+	@Column(name = "price_value")
 	private Double value;
 	
 	public Price() {
