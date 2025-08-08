@@ -1,4 +1,4 @@
-package com.luizbarros.uri2613;
+package com.luizbarros.uri2613.dto;
 
 import com.luizbarros.uri2613.projections.MovieProjection;
 
